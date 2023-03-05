@@ -1,18 +1,20 @@
-package is.hi.cs.junit5demo;
+package is.hi.cs.junit4demo;
 
-import org.junit.jupiter.api.*;
+// import static org.junit.Assert.*; // Not needed if we only use assertThaz
 
 import static org.hamcrest.MatcherAssert.assertThat;
-import static org.hamcrest.Matchers.*;
+import static org.hamcrest.CoreMatchers.*;
 
-@Tag("UsingHamcrest")
+import org.junit.Before;
+import org.junit.Test;
+
 public class MoneyWithAssertThatTest {
 
 	private Money m12;
 	private Money m14;
 
-	@BeforeEach
-	void constructMoneyTestObjects() {
+	@Before
+	public void constructMoneyTestObjects() {
 		m12 = new Money(12);
 		m14 = new Money(14);
 	}

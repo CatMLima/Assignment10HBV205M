@@ -1,4 +1,4 @@
-package is.hi.cs.junit5demo;
+package is.hi.cs.junit4demo;
 
 public class Money {
 	  private int amount;

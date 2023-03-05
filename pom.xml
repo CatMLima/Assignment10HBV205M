@@ -1,15 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>is.hi.cs</groupId>
-	<artifactId>junit5demoWithMaven</artifactId>
+	<artifactId>junit4demoWithMaven</artifactId>
 	<version>1.1.0</version>
 
-	<name>Demo of Junit5 with Maven that also is an Eclipse project</name>
+	<name>Demo of Junit4 with Maven that also is an Eclipse project</name>
 
 	<developers>
 		<developer>
@@ -28,8 +26,8 @@
 		</license>
 	</licenses>
 	<scm>
-		<connection>scm:git:https://gitlab.com/helmut.neukirchen/junit5demowithmaven.git</connection>
-		<url>https://gitlab.com/helmut.neukirchen/junit5demowithmaven</url>
+		<connection>scm:git:https://gitlab.com/helmut.neukirchen/junit4demowithmaven.git</connection>
+		<url>https://gitlab.com/helmut.neukirchen/junit4demowithmaven</url>
 	</scm>
 
 	<properties>
@@ -39,57 +37,20 @@
 		<java.version>8</java.version> <!-- If "8" does not work, try "1.8" or something newer, e.g. "11" -->
 		<maven.compiler.source>${java.version}</maven.compiler.source>
 		<maven.compiler.target>${java.version}</maven.compiler.target>
-<!-- 		<maven.compiler.release>${java.version}</maven.compiler.release> --> <!-- Commented out as it is only understood by JDK >= 9 -->
+		<!-- 		<maven.compiler.release>${java.version}</maven.compiler.release> -->
+		<!-- Commented out as it is only understood by JDK >= 9 -->
 	</properties>
 
-	<!-- The dependencyManagement block that follows below is a central place 
-		to set versions for dependencies so that they can later in the dependencies 
-		block be used without bothering about versions -->
-	<!-- A BOM (Bill Of Materials) that is referenced inside the dependencyManagement 
-		block is an external POM that sets for a bigger set of dependencies (the 
-		Bill Of Materials) the versions so that they fit together -->
-	<dependencyManagement>
-		<dependencies>
-			<!-- JUnit5 consists of packages junit-jupiter 5.x.y and junit-platform 
-				1.X.Y and the x and X need to fit together. This is achieved by this BOM -->
-			<dependency>
-				<groupId>org.junit</groupId>
-				<artifactId>junit-bom</artifactId>
-				<version>5.8.2</version>
-				<type>pom</type>
-				<scope>import</scope>
-			</dependency>
-		</dependencies>
-	</dependencyManagement>
 
 	<dependencies>
-
-		<!-- junit-jupiter includes junit-jupiter-api/-engine/-params Needed for 
-			the actual annotations and asserts -->
+		<!-- JUnit 4 (depends itself on hamcrest core 1.3-->
 		<dependency>
-			<groupId>org.junit.jupiter</groupId>
-			<artifactId>junit-jupiter</artifactId>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.13.2</version>
 			<scope>test</scope>
 		</dependency>
-
-		<!-- junit-platform-suite includes junit-platform-suite-api/-engine Needed 
-			for the suite annotations -->
-		<dependency>
-			<groupId>org.junit.platform</groupId>
-			<artifactId>junit-platform-suite</artifactId>
-			<scope>test</scope>
-		</dependency>
-
-		<!-- assertThat and hamcrest matchers -->
-		<dependency>
-			<groupId>org.hamcrest</groupId>
-			<artifactId>hamcrest</artifactId>
-			<version>2.2</version>
-			<scope>test</scope>
-		</dependency>
-
 	</dependencies>
-
 
 
 	<build>
@@ -129,7 +90,7 @@
 							<goal>prepare-agent</goal>
 						</goals>
 					</execution>
-					
+
 					<!-- Make report generation (in target/site/jacoco/) bound to test phase (instead of verify phase) -->
 					<execution>
 						<id>post-unit-test</id>
@@ -138,7 +99,7 @@
 							<goal>report</goal>
 						</goals>
 					</execution>
-					
+
 					<!-- Checks when running mvn verify whether coverage goal has been met; abort build, if not -->
 					<execution>
 						<id>verify-eightypercentcoverage</id>
@@ -148,7 +109,7 @@
 						<configuration>
 							<rules>
 								<rule>
-								<!-- Coverage on BUNDLE (whole program average) needs to be reached, opposed to, e.g. every class on its own  -->
+									<!-- Coverage on BUNDLE (whole program average) needs to be reached, opposed to, e.g. every class on its own  -->
 									<element>BUNDLE</element>
 									<limits>
 										<limit>

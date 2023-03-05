@@ -6,10 +6,10 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>is.hi.cs</groupId>
-	<artifactId>junit5demoWithMaven</artifactId>
+	<artifactId>junit4demoWithMaven</artifactId>
 	<version>1.1.0</version>
 
-	<name>Demo of Junit5 but POM needs to be completed</name>
+	<name>Demo of Junit4 but POM needs to be completed</name>
 
 	<developers>
 		<developer>
@@ -28,8 +28,8 @@
 		</license>
 	</licenses>
 	<scm>
-		<connection>scm:git:https://gitlab.com/helmut.neukirchen/junit5demowithmaven.git</connection>
-		<url>https://gitlab.com/helmut.neukirchen/junit5demowithmaven</url>
+		<connection>scm:git:https://gitlab.com/helmut.neukirchen/junit4demowithmaven.git</connection>
+		<url>https://gitlab.com/helmut.neukirchen/junit4demowithmaven</url>
 	</scm>
 
 	<properties>
