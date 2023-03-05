@@ -4,10 +4,10 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>is.hi.cs</groupId>
-	<artifactId>junit4demoWithMaven</artifactId>
+	<artifactId>MoneyStackWithMaven</artifactId>
 	<version>1.1.0</version>
 
-	<name>Demo of Junit4 with Maven that also is an Eclipse project</name>
+	<name>Money and Stack with Maven that also is an Eclipse project</name>
 
 	<developers>
 		<developer>
@@ -26,19 +26,17 @@
 		</license>
 	</licenses>
 	<scm>
-		<connection>scm:git:https://gitlab.com/helmut.neukirchen/junit4demowithmaven.git</connection>
-		<url>https://gitlab.com/helmut.neukirchen/junit4demowithmaven</url>
+		<connection>scm:git:https://gitlab.com/helmut.neukirchen/moneystackwithmaven.git</connection>
+		<url>https://gitlab.com/helmut.neukirchen/moneystackwithmaven</url>
 	</scm>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<!-- JUnit5 needs at least Java 8 -->
 		<!-- Custom property "java.version"; can be referenced via ${ } -->
-		<java.version>8</java.version> <!-- If "8" does not work, try "1.8" or something newer, e.g. "11" -->
+		<java.version>17</java.version> <!-- If "17" does not work, try the version of your JDK -->
 		<maven.compiler.source>${java.version}</maven.compiler.source>
 		<maven.compiler.target>${java.version}</maven.compiler.target>
-		<!-- 		<maven.compiler.release>${java.version}</maven.compiler.release> -->
-		<!-- Commented out as it is only understood by JDK >= 9 -->
+		<maven.compiler.release>${java.version}</maven.compiler.release> <!-- Only understood by JDK >= 9 -->
 	</properties>
 
 
@@ -50,8 +48,13 @@
 			<version>4.13.2</version>
 			<scope>test</scope>
 		</dependency>
+		<dependency>
+			<groupId>org.mockito</groupId>
+			<artifactId>mockito-core</artifactId>
+			<version>5.1.1</version>
+			<scope>test</scope>
+		</dependency>
 	</dependencies>
-
 
 	<build>
 		<plugins>
@@ -69,11 +72,13 @@
 				<!-- >=2.22.0 needed for JUnit5 -->
 				<version>2.22.2</version>
 				<configuration>
+				<?ignore
 					<!-- Includes can be overriden on commandline using mvn test -Dtest=NameOfTestClass 
 						- however -Dtest does not work if the class contains a JUnit5-style suite -->
 					<includes>
 						<include>AlltestsUsingSelectClasses</include>
 					</includes>
+				?>
 				</configuration>
 			</plugin>
 
