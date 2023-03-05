@@ -32,4 +32,7 @@ public class MoneyStack {
 		}
 		return currentSum;
 	}
+	
+	// TODO: Add getCapacity() method
+	
 }
