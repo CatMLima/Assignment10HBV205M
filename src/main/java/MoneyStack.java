@@ -1,16 +1,16 @@
 public class MoneyStack {
-	private static final int theCapacity = 10;
+	private static final int THE_CAPACITY = 10;
 	private Money[] theStack;
 	private int nextPushLocation; // Location in theStack array, where next push
 									// will insert. 0 means: stack is empty.
 
 	public MoneyStack() {
-		theStack = new Money[MoneyStack.theCapacity];
+		theStack = new Money[MoneyStack.THE_CAPACITY];
 		nextPushLocation = 0;
 	}
 
 	public boolean isFull() {
-		if (nextPushLocation == theCapacity) {
+		if (nextPushLocation == THE_CAPACITY) {
 			return true;
 		} else {
 			return false;
