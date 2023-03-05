@@ -26,8 +26,8 @@ Import to Eclipse via:
 1. Next *(to confirm* Import existing Eclipse projects *)*
 1. Finish
 
-This should have given you a new project: `junit5demoWithMaven`
+This should have given you a new project: `MoneyStackWithMaven`
 
 In Eclipse, you can run test cases using Eclipse's GUI test runner (Run as > JUnit Test) or via Maven (Run as > Maven test) or simply use Maven on the command line (but be aware that Eclipse caches files and does not notice if you change files outside of Eclipse unless you press F5 to refresh).
 
-Note that the libraries are expected to be downloaded by Maven. If you have not Maven installed then, your IDE cannot do that. However, for the JUnit library, IDEs typically provide a quickfix to add on their own JUnit.
+Note that the libraries are expected to be downloaded by Maven. If you have not Maven installed then, your IDE cannot do that. However, all needed libraries are contained in directory `lib`: VS Code should search automatically in that directory for libraries and in IntelliJ, select the `lib` directory->Right mouse button->Add as Library...->OK.
