@@ -8,7 +8,7 @@ The files in `.settings`, `.classpath`,  `.project` are specific for the Eclipse
 `mvn test` runs all test cases in classes ending with `Test`. 
 
 If you want to use this project with a Java IDE:
-- IntelliJ: Start a new project from version control, i.e. clone this project. IntelliJ should notice that this is an Eclipse project and a Maven project and asks you about the project style to use. It does not matter what you chose, because both styles give you exactly the same project setup.
+- IntelliJ: Start a new project from version control, i.e. clone this project. IntelliJ should notice that this is an Eclipse project and a Maven project and asks you about the project style to use. Inn case of doubt, choose `Maven`.
 - Visual Studio Code: Clone it (Help -> Show All Commands -> Type in: `Git: Clone`. This should be enough.
 - Eclipse: see steps below:
 
