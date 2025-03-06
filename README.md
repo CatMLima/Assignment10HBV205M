@@ -19,7 +19,9 @@ Import to Eclipse via:
 1. Projects from Git *(Note: do __not__ use "with smart import")* 
 1. Next
 1. *Select* Clone URI
-1. *paste Clone URI as* URI
+1. Next *(to confirm the selcon using a Clone URI)*
+1. *paste Clone URI as* URI (you have the URL already in the copy buffer it is automatically filled in)
+1. Next *(to confirm using that URI)*
 1. Next *(i.e.* import `main` branch *)*
 1. Next *(to confirm your local directory location to clone to)*
 1. Next *(to confirm* Import existing Eclipse projects *)*
