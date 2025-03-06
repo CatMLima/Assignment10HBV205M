@@ -27,6 +27,6 @@ Import to Eclipse via:
 
 This should have given you a new project: `MoneyStackWithMaven`
 
-In Eclipse, you can run test cases using Eclipse's GUI test runner (Run as > JUnit Test) or via Maven (Run as > Maven test) or simply use Maven on the command line (but be aware that Eclipse caches files and does not notice if you change files outside of Eclipse unless you press F5 to refresh).
+In Eclipse, you can run test cases using Eclipse's GUI test runner (Run as > JUnit Test) or via Maven (Run as > Maven test) or simply use Maven on the command line outside of Eclipse (but be aware that Eclipse caches files and does not notice if files change outside of Eclipse: you need to press F5 to refresh).
 
-Note that in principle, the libraries are expected to be downloaded by Maven. However, if you have not Maven installed, then your IDE cannot tell Maven to download the libraries. However, all needed libraries are in addition contained in directory `lib`: VS Code should search automatically in that directory for libraries and in IntelliJ, select the `lib` directory->Right mouse button->Add as Library...->OK. (And as this is an Eclipse project, Eclipse should automatically use these libraries.)
+Note that in principle, the libraries are expected to be downloaded by Maven. However, if you have not Maven installed, then your IDE cannot tell Maven to download the libraries. However, as all needed libraries are anyway in addition contained in directory `lib`: VS Code should search automatically in that directory for libraries and in IntelliJ, select the `lib` directory->Right mouse button->Add as Library...->OK. (And as this is an Eclipse project, Eclipse should automatically use these libraries.)
