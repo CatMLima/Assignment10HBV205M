@@ -34,5 +34,16 @@ public class MoneyStack {
 	}
 	
 	// TODO: Add getCapacity() method
+	public int getCapacity(){
+		return THE_CAPACITY;
+	}
+
+	public boolean isEmpty() {
+		return nextPushLocation == 0;
+	}
+
+	public int getCurrentSize() {
+		return nextPushLocation;
+	}
 	
 }

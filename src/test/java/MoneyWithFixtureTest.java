@@ -26,6 +26,13 @@ public class MoneyWithFixtureTest {
 	}
 
 	@Test
+	public void testNotEqualObjectsNotEqual(){
+		Money money = new Money(12);
+		String moneyNot = "not money";
+		assertFalse(money.equals(moneyNot));
+	}
+
+	@Test
 	public void testNotEqualsWithMoneyObjectWithAnotherValue() {
 		assertFalse(m12.equals(m14));
 	}
@@ -34,5 +41,12 @@ public class MoneyWithFixtureTest {
 	public void testAdd() {
 		Money expected = new Money(26);
 		assertEquals(expected, m12.add(m14));
+	}
+
+	@Test
+	public void testToString(){
+		Money money = new Money(26);
+		String expected = "26";
+		assertEquals(expected,money.toString());
 	}
 }

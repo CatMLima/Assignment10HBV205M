@@ -70,7 +70,7 @@
 			<plugin>
 				<artifactId>maven-surefire-plugin</artifactId>
 				<!-- >=2.22.0 needed for JUnit5 -->
-				<version>2.22.2</version>
+				<version>3.0.0-M7</version>
 				<configuration>
 				<?ignore
 					<!-- Includes can be overriden on commandline using mvn test -Dtest=NameOfTestClass 
@@ -79,6 +79,23 @@
 						<include>AlltestsUsingSelectClasses</include>
 					</includes>
 				?>
+				</configuration>
+			</plugin>
+
+			<plugin>
+				<groupId>org.pitest</groupId>
+				<artifactId>pitest-maven</artifactId>
+				<version>1.18.2</version>
+				<configuration>
+					<targetClasses>
+						<param>Money</param>
+						<param>MoneyStack</param>
+					</targetClasses>
+					<targetTests>
+						<param>MoneyStackSumTest</param>
+						<param>MoneyStackWithFixtureTest</param>
+						<param>MoneyWithFixtureTest</param>
+					</targetTests>
 				</configuration>
 			</plugin>
 
